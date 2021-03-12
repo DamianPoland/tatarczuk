@@ -1,11 +1,5 @@
-* {
-    /* add color in index.css eg: --accent: 106, 12, 210;*/
-    --colorNav: var(--accent);
-}
-
-
 .background {
-    background: linear-gradient(to right, rgba(0, 0, 0, 1) 0%, rgb(var(--colorNav)) 50%, rgba(0, 0, 0, 1) 100%);
+    background: black;
     position: fixed;
     left: 0;
     right: 0;
@@ -28,10 +22,30 @@
     align-items: center;
 }
 
-.headerImg {
+.header__img {
     height: 3.5rem;
     width: 3.5rem;
     padding: .5rem
+}
+
+.header__descContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.header__descTop {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: -0.5rem 0;
+    font-family: 'Kalam', cursive;
+    color: rgb(var(--accent))
+}
+
+.header__descBottom {
+    color: white;
+    font-size: 0.8rem;
+    opacity: 0.8;
+
 }
 
 .headerImg2 {
@@ -58,10 +72,6 @@
     margin: 1rem 0;
 }
 
-.listItem:hover {
-    opacity: 1;
-}
-
 .listItemAnchor {
     padding: 1rem;
     text-decoration: none;
@@ -79,12 +89,10 @@
 
 .listItemAnchorAd:active {
     background-color: rgb(170, 170, 170);
-
-
 }
 
 .activeLink {
-    color: rgba(255, 255, 255, 1);
+    color: rgb(var(--accent));
 }
 
 
@@ -141,7 +149,7 @@
     transform: rotate(-45deg) translate(35px, 35px);
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 800px) {
     .burgerMenu {
         display: flex;
     }
@@ -151,7 +159,7 @@
         position: absolute;
         top: 4rem;
         right: -50%;
-        background: linear-gradient(270deg, rgba(0, 0, 0, 1) 0%, rgba(var(--colorNav)) 100%);
+        background: black;
         height: calc(100vh - 4rem);
         width: 50%;
         transition: transform .6s ease;

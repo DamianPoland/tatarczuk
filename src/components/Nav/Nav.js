@@ -4,7 +4,6 @@ import style from './Nav.module.css'
 
 // images
 import logo from '../../assets/logo512.png'
-import logotyp from '../../assets/logotyp.png'
 
 
 const Nav = () => {
@@ -21,8 +20,11 @@ const Nav = () => {
         <header className={style.background}>
             <nav className={style.container}>
                 <div className={style.header}>
-                    <img className={style.headerImg} src={logo} alt='logo' />
-                    <img className={style.headerImg2} src={logotyp} alt='getpol_logo_white' />
+                    <img className={style.header__img} src={logo} alt='logo' />
+                    <div className={style.header__descContainer}>
+                        <p className={style.header__descTop}>Tatarczuk Paweł</p>
+                        <p className={style.header__descBottom}>Zakład Instalacyjny Wod-Kan. CO i Gaz</p>
+                    </div>
                 </div>
                 <ul onClick={() => setIsOpenMobileMenu(false)} className={`${style.list} ${styleMobileMenu}`}>
                     <li className={style.listItem}><NavLink to='/about' activeClassName={style.activeLink} className={style.listItemAnchor}>O firmie</NavLink></li>

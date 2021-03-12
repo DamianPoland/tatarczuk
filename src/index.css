@@ -24,11 +24,11 @@ body {
 :root {
   /* colors */
 
-  --accent: 106, 12, 210;
-  /* #6a0cd2 */
+  --accent: 255, 0, 0;
+  /* #c80000*/
 
-  --accentDark: 85, 9, 168;
-  /* #5509a8 */
+  --text: 80, 80, 80;
+  /* #505050 */
 
   --backgroundCustom: linear-gradient(90deg, rgb(240, 240, 240) 0%, rgb(221, 221, 221) 50%, rgb(240, 240, 240) 100%);
 }
@@ -54,4 +54,50 @@ body::-webkit-scrollbar-thumb {
   body {
     font-size: 75%;
   }
+}
+
+/* all COMPONENTS */
+.text1 {
+  font-size: 1.5rem;
+  color: rgb(var(--accent));
+  font-family: 'Kalam', cursive;
+  letter-spacing: 1.2px;
+  font-weight: 600;
+}
+
+.text2 {
+  font-size: 2.5rem;
+  color: black;
+  font-weight: 600;
+}
+
+.text2white {
+  color: white;
+  opacity: 0.9;
+}
+
+.text3 {
+  font-size: 1rem;
+  padding-top: 1rem;
+  color: rgb(var(--text));
+  font-weight: normal;
+  line-height: 2rem;
+}
+
+.text3white {
+  color: white;
+  opacity: 0.9;
+}
+
+.line {
+  margin-top: 1rem;
+  padding-top: 0.3rem;
+  background: rgb(var(--accent));
+  width: 5rem;
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+  display: block;
 }
