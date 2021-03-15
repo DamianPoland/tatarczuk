@@ -8,24 +8,22 @@
 }
 
 .container {
-    margin: auto;
-    max-width: 1200px;
     height: 4rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-
 }
 
 .header {
     display: flex;
     align-items: center;
+    text-decoration: none;
 }
 
 .header__img {
-    height: 3.5rem;
-    width: 3.5rem;
-    padding: .5rem
+    height: 3rem;
+    width: 3rem;
+    margin: .5rem
 }
 
 .header__descContainer {
@@ -38,19 +36,13 @@
     font-weight: 600;
     margin: -0.5rem 0;
     font-family: 'Kalam', cursive;
-    color: rgb(var(--accent))
+    color: rgb(var(--accent));
 }
 
 .header__descBottom {
     color: white;
     font-size: 0.8rem;
     opacity: 0.8;
-
-}
-
-.headerImg2 {
-    height: 3rem;
-    padding: .5rem
 }
 
 .headerDesc {
@@ -63,13 +55,24 @@
 
 .list {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    list-style-type: none;
+    position: absolute;
+    top: 4rem;
+    right: -50%;
+    background: black;
+    height: calc(100vh - 4rem);
+    width: 50%;
+    transition: transform .6s ease;
     cursor: pointer;
 }
 
 .listItem {
     margin: 1rem 0;
+}
+
+.listOpen {
+    transform: translateX(-100%);
 }
 
 .listItemAnchor {
@@ -95,12 +98,11 @@
     color: rgb(var(--accent));
 }
 
-
 /* burger */
 
 .burgerMenu {
     position: relative;
-    display: none;
+    display: flex;
     justify-content: center;
     align-items: center;
     width: 40px;
@@ -149,24 +151,22 @@
     transform: rotate(-45deg) translate(35px, 35px);
 }
 
-@media screen and (max-width: 800px) {
+@media (min-width: 800px) {
+
+    .container {
+        margin: auto;
+        max-width: 1200px;
+    }
+
     .burgerMenu {
-        display: flex;
+        display: none;
     }
 
     .list {
-        flex-direction: column;
-        position: absolute;
-        top: 4rem;
-        right: -50%;
-        background: black;
-        height: calc(100vh - 4rem);
-        width: 50%;
-        transition: transform .6s ease;
-    }
-
-    .listOpen {
-        transform: translateX(-100%);
+        flex-direction: row;
+        position: initial;
+        height: unset;
+        width: unset;
     }
 }
 

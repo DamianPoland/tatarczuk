@@ -1,13 +1,16 @@
 .background {
     background: black;
+    position: relative;
+    overflow: hidden;
 }
 
 .container {
     margin: 0px auto;
     max-width: 1200px;
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
-    padding: 1rem;
+    padding: 2rem 1rem 2rem 1rem;
 }
 
 .text {
@@ -48,8 +51,8 @@
 }
 
 
-@media screen and (max-width:800px) {
+@media (min-width:800px) {
     .container {
-        flex-direction: column;
+        flex-direction: row;
     }
 }
