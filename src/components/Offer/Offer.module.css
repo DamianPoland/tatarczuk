@@ -1,13 +1,14 @@
 .background {
     width: 100%;
-    min-height: calc(100vh - 5rem);
+    min-height: calc(100vh - 8rem);
     margin-top: 4rem;
     background: var(--backgroundCustom);
 }
 
 .section {
-    max-width: 1200px;
+    max-width: 1600px;
     margin: auto;
+    padding: 4rem 1rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -16,13 +17,77 @@
 .head {
     display: flex;
     flex-direction: column;
-    padding-top: 3rem;
     align-self: center;
 }
 
-.header {
-    color: black;
-    font-size: 2.5rem;
-    opacity: 1;
+.offer__container {
+    display: flex;
+    flex-direction: column;
+}
+
+.offer__item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.offer__itemFigure {
+    /* in js added */
+    /* padding: 0 0 0 3rem;
+    padding: 0 3rem 0 0; */
+}
+
+.offer__itemImg {
+    width: 100%;
+    height: 100%;
+}
+
+.offer__itemTextContainer {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    background: white;
+    transform: translateY(4rem);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.offer__itemNumber {
+    font-size: 3rem;
+    color: rgb(var(--accent));
+    font-weight: 300;
     font-family: 'Kalam', cursive;
+}
+
+.offer__itemText {
+    font-size: 1.5rem;
+    color: black;
+    font-weight: 600;
+}
+
+@media (min-width: 800px) {
+    .section {
+        padding: 4rem 1rem 8rem 1rem;
+    }
+
+    .offer__itemFigure {
+        max-width: 1000px;
+    }
+
+    .offer__itemTextContainer {
+        width: 60%;
+        max-width: 720px;
+        padding: 2rem;
+        transform: translateY(8rem);
+    }
+
+    .offer__itemNumber {
+        font-size: 4rem;
+    }
+
+    .offer__itemText {
+        font-size: 2rem;
+    }
+
 }

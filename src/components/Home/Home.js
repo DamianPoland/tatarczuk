@@ -25,6 +25,9 @@ import cwu4 from '../../assets/realizations/cwu4.jpeg'
 import co1 from '../../assets/realizations/co1.jpeg'
 import co2 from '../../assets/realizations/co2.jpeg'
 
+//svg
+import { ReactComponent as Phone } from '../../assets/phone.svg'
+
 
 
 const Home = () => {
@@ -126,10 +129,10 @@ const Home = () => {
                             <img className={style.offer__img} src={kociol2} alt="kociol2" />
                         </figure>
                         <figure className={style.offer__figure}>
-                            <img className={style.offer__img} src={pakiet2} alt="pakiet2" />
+                            <img className={style.offer__img} src={PompCWO2} alt="PompCWO2" />
                         </figure>
                         <figure className={style.offer__figure}>
-                            <img className={style.offer__img} src={PompCWO2} alt="PompCWO2" />
+                            <img className={style.offer__img} src={pakiet2} alt="pakiet2" />
                         </figure>
                         <figure className={style.offer__figure}>
                             <img className={style.offer__img} src={pompa1} alt="pompa1" />
@@ -176,7 +179,7 @@ const Home = () => {
                 <p className="text1">KONTAKT</p>
                 <p className="text2">Zamów bezpłatną wycenę</p>
                 <div className="line"></div>
-                <h1 className={style.contact__tel}>+48 501-388-627</h1>
+                <h1 className={style.contact__tel}><a href='tel:+48501388627' className={style.contact__telIcon}><Phone /></a>+48 501-388-627</h1>
                 <div className={style.btnContainer}>
                     <Link to="/contact" className={style.btn}>Sprawdź inne formy kontaktu <i className={style.rightArrow}></i></Link>
                 </div>

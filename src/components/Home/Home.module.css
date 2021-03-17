@@ -231,6 +231,7 @@
 .offer__img {
     max-height: 100%;
     max-width: 100%;
+    display: block;
 }
 
 
@@ -242,7 +243,7 @@
     padding: 8rem 0;
     display: flex;
     flex-direction: column;
-    background: #141d28;
+    background: #2c231c;
     position: relative;
     clip-path: polygon(0 0, 50% 2rem, 100% 0, 100% calc(100% - 2rem), 50% 100%, 0 calc(100% - 2rem));
 }
@@ -272,6 +273,11 @@
     width: 100%;
     height: 100%;
     display: block;
+    transition: 0.2s ease-in-out;
+}
+
+.realizations__img:hover {
+    transform: scale(1.03);
 }
 
 .realizations__btnContainer {
@@ -291,11 +297,53 @@
 }
 
 .contact__tel {
+    display: flex;
+    align-items: center;
     font-size: 3rem;
     color: black;
     font-weight: 300;
     padding-top: 2rem;
 }
+
+.contact__telIcon {
+    width: 4rem;
+    height: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    fill: rgb(var(--accent));
+
+    /* animation */
+    animation: shake 2s cubic-bezier(.36, .07, .19, .97) infinite;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+
+@keyframes shake {
+
+    2%,
+    98% {
+        transform: translate3d(-1px, 0, 0);
+    }
+
+    4%,
+    96% {
+        transform: translate3d(2px, 0, 0);
+    }
+
+    6%,
+    94% {
+        transform: translate3d(-4px, 0, 0);
+    }
+
+    8%,
+    92% {
+        transform: translate3d(4px, 0, 0);
+    }
+}
+
+/* section FOOTER */
 
 .footer {
     width: 100%;
@@ -336,7 +384,7 @@
     }
 
     .about__figure {
-        clip-path: polygon(0 0, 50% 1rem, 100% 0, 100% calc(100% - 1rem), 50% 100%, 0 calc(100% - 1rem));
+        clip-path: polygon(0 0, 100% 1rem, 100% 100%, 0 calc(100% - 1rem));
     }
 
     .why__container {

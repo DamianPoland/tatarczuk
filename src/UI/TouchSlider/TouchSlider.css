@@ -1,0 +1,22 @@
+/* paginations (dot) color */
+.swiper-pagination-bullet-active {
+    background: rgb(var(--accent)) !important;
+}
+
+/* arrows color */
+.swiper-button-prev,
+.swiper-button-next {
+    color: rgb(var(--accent)) !important;
+}
+
+/* arrows size */
+.swiper-button-next::after,
+.swiper-button-prev:after {
+    font-size: 3rem !important;
+}
+
+/* image container */
+.swiper-slider-ontainer-custom {
+    background: white;
+    padding: 0.5rem;
+}

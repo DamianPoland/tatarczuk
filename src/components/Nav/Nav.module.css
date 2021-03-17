@@ -96,6 +96,7 @@
 
 .activeLink {
     color: rgb(var(--accent));
+    font-weight: 600;
 }
 
 /* burger */
