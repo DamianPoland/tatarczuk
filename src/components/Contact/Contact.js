@@ -22,9 +22,9 @@ const Contact = () => {
 
 
     return (
-        <section className={style.background}>
+        <main className={style.background}>
 
-            <div className={style.section}>
+            <header className={style.section}>
                 <div className={style.head}>
                     <p className="text1">KONTAKT</p>
                     <h1 className="text2">Skontaktuj się z nami</h1>
@@ -33,7 +33,7 @@ const Contact = () => {
                 <div className={style.contact}>
 
                     {/* contact links  */}
-                    <div className={style.content}>
+                    <section className={style.content}>
                         <a className={style.contentItem} href={`http://maps.google.com/?q=Gdynia Wieluńska 38`} target='blank' >
                             <p className={style.contentIcon}><Location /></p>
                             <p className={style.contentDesc}>ul. Wieluńska 38, 81-502 Gdynia</p>
@@ -46,19 +46,19 @@ const Contact = () => {
                             <p className={style.contentIcon}><Email /></p>
                             <p className={style.contentDesc}>e-mail: tatarczuk.serwis@poczta.fm</p>
                         </a>
-                    </div>
+                    </section>
 
-                    {/* form */}
-                    <div className={style.map}>
+                    {/* map */}
+                    <section className={style.map}>
                         {!mapIsReady && <Spinner />}
                         <iframe title="mapa" onLoad={() => setMapIsReady(true)} className={style.mapItem} src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2317.7359728060633!2d18.520530316009307!3d54.48524009649383!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46fda0e9d6a4a177%3A0x6421db371cb9593e!2sTatarczuk%20Pawe%C5%82.%20Zak%C5%82ad%20Instalacyjny%20Wod-Kan%20CO%20i%20Gaz!5e0!3m2!1spl!2spl!4v1615846057971!5m2!1spl!2spl">
                         </iframe>
-                    </div>
+                    </section>
 
                 </div>
-            </div>
+            </header>
 
-        </section>
+        </main>
     )
 }
 

@@ -1,5 +1,8 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import style from './Offer.module.css'
+
+// components
+import Carousel from '../../UI/Carousel/Carousel'
 
 // photos
 import banerPompaCiepla from '../../assets/offer/banerPompaCiepla.jpg'
@@ -17,7 +20,7 @@ const offer = [
     { img: banerPompaCiepla, text: "Pompy ciepła.", number: ".01" },
     { img: montazKotlow, text: "Montaż kotłów gazowych.", number: ".02" },
     { img: banerNowoczesne, text: "Nowoczesne instalacje centralnego ogrzewania.", number: ".03" },
-    { img: serwis, text: "Serwis kotłów gazowych Ariston i Chaffoteaux&Maury", number: ".04" },
+    { img: serwis, text: "Serwis kotłów gazowych Ariston i Chaffoteaux&Maury.", number: ".04" },
     { img: wodkan, text: "Instalacje wodociągowe i kanalizacyjne.", number: ".05" },
     { img: gaz, text: "Instalacje gazowe.", number: ".06" },
     { img: solar, text: "Instalacje solarne.", number: ".07" },
@@ -27,17 +30,24 @@ const offer = [
 
 const Offer = () => {
 
+    useEffect(() => { window.scrollTo(0, 0) }, [])
 
     return (
 
         <main className={style.background}>
             <div className={style.section}>
 
-                <div className={style.head}>
-                    <p className="text1">OFERTA</p>
+                <header className={style.head}>
+                    <h2 className="text1">OFERTA</h2>
                     <h1 className="text2">Skorzystaj z naszej oferty</h1>
                     <div className="line"></div>
-                </div>
+                </header>
+
+                <section className={style.carousel}>
+                    <Carousel array={offer} />
+                </section>
+
+
                 <section className={style.offer__container}>
 
                     {offer.map((item, id) => {

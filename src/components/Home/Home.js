@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import style from './Home.module.css'
 
@@ -36,9 +36,12 @@ import { ReactComponent as Phone } from '../../assets/phone.svg'
 
 
 const Home = () => {
+
+    useEffect(() => { window.scrollTo(0, 0) }, [])
+
     return (
 
-        <div className={style.background}>
+        <main className={style.background}>
 
 
             <section className={style.start}>
@@ -162,7 +165,7 @@ const Home = () => {
                     <p className="text1">Technologia</p>
                     <p className="text2">Nowoczesne instalacje.</p>
                     <div className="line"></div>
-                    <h1 className="text3">Proponujemy naszym klientom najnowocześniejsze rowiązania dostępne na rynku.</h1>
+                    <h2 className="text3">Proponujemy naszym klientom najnowocześniejsze rowiązania dostępne na rynku.</h2>
                 </div>
                 <figure className={style.technology__figure}>
                     <img className="img" src={banerWifi} alt="banerWifi" />
@@ -174,7 +177,7 @@ const Home = () => {
                 <div className={style.realizations__container}>
                     <div className={style.realizations__descContainer}>
                         <p className="text1">REALIZACJE</p>
-                        <p className="text2 text2white">Nasze ostatnie realizacje</p>
+                        <h2 className="text2 text2white">Nasze ostatnie realizacje</h2>
                         <div className="line"></div>
                     </div>
                     <div className={style.realizations__imgsContainer}>
@@ -202,7 +205,7 @@ const Home = () => {
 
             <section className={style.contact}>
                 <p className="text1">KONTAKT</p>
-                <p className="text2">Zamów bezpłatną wycenę</p>
+                <h2 className="text2">Zamów bezpłatną wycenę</h2>
                 <div className="line"></div>
                 <h1 className={style.contact__tel}><a href='tel:+48501388627' className={style.contact__telIcon}><Phone /></a>+48 501-388-627</h1>
                 <div className={style.btnContainer}>
@@ -218,7 +221,7 @@ const Home = () => {
 
             <section className={style.footer}> </section>
 
-        </div>
+        </main>
     )
 }
 

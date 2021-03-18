@@ -33,11 +33,11 @@ const TouchSlider = props => {
             // speed={1000} //autoplay
             // autoplay={{ delay: 1000 }} //autoplay
             autoHeight={true}
-            initialSlide={window.innerWidth > 500 ? props.initialSlide - 1 : props.initialSlide}
+            initialSlide={window.innerWidth > 800 ? props.initialSlide - 1 : props.initialSlide}
             style={{ padding: "4rem 0" }}
             effect="coverflow" // cube or coverflow
             spaceBetween={50} // margin
-            slidesPerView={window.innerWidth > 500 ? 3 : 1} // how many slides visible => according to with (pnone => 1 and PC => 3)
+            slidesPerView={window.innerWidth > 800 ? 3 : 1} // how many slides visible => according to with (pnone => 1 and PC => 3)
             loop={true}
             navigation
             pagination={{ clickable: true }}

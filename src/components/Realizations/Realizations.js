@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import style from './Realizations.module.css'
 
 // components
@@ -69,29 +69,31 @@ const realizations = [
 
 const Realizations = () => {
 
+    useEffect(() => { window.scrollTo(0, 0) }, [])
+
     // swiper
     const [isSwiperVisible, setIsSwiperVisible] = useState(false)
 
     return (
 
-        <main className={style.background}>
+        <div className={style.background}>
             {isSwiperVisible &&
-                <div className={style.slider__background}>
+                <section className={style.slider__background}>
                     <div className={style.slider}>
                         <div onClick={() => setIsSwiperVisible(false)} className={style.slider__close}>
                             <Close />
                         </div>
                         <TouchSlider itemsArray={realizations} initialSlide={isSwiperVisible - 1} />
                     </div>
-                </div>}
+                </section>}
 
-            <div className={style.section}>
+            <main className={style.section}>
 
-                <div className={style.head}>
-                    <p className="text1">REALIZACJE</p>
+                <header className={style.head}>
+                    <h2 className="text1">REALIZACJE</h2>
                     <h1 className="text2">Obejrzyj nasze realizacje</h1>
                     <div className="line"></div>
-                </div>
+                </header>
 
                 <section className={style.realizations__container}>
                     {realizations.map((item, id) => {
@@ -103,8 +105,8 @@ const Realizations = () => {
                     })}
                 </section>
 
-            </div>
-        </main>
+            </main>
+        </div>
     )
 }
 
