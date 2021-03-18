@@ -48,7 +48,7 @@
 
 .start {
     position: relative;
-    background: black;
+    background: rgb(41, 43, 30);
     clip-path: polygon(0 0, 100% 0, 100% calc(100% - 2rem), 50% 100%, 0 calc(100% - 2rem));
 }
 
@@ -59,7 +59,7 @@
     top: 0;
     left: 0;
     background: black;
-    opacity: 0.3;
+    opacity: 0.5;
 }
 
 .start__figureSmall {
@@ -72,13 +72,15 @@
 }
 
 .start__descContainer {
+    width: 100%;
     position: absolute;
-    top: 50%;
-    left: 0;
+    top: 20%;
+    left: 50%;
     padding-left: 2rem;
-    transform: translateY(-50%);
+    transform: translate(-50%, -50%);
     display: flex;
     flex-direction: column;
+    align-items: center;
     font-size: 2rem;
 }
 
@@ -143,18 +145,8 @@
     background-size: cover;
     position: relative;
     clip-path: polygon(0 0, 50% 2rem, 100% 0, 100% calc(100% - 2rem), 50% 100%, 0 calc(100% - 2rem));
-
 }
 
-.why__blackFilter {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background: black;
-    opacity: 0.2;
-}
 
 .why__container {
     padding: 8rem 0;
@@ -168,6 +160,7 @@
     display: flex;
     flex-direction: column;
     position: relative;
+    background: rgba(0, 0, 0, 0.7);
 }
 
 .why__reasonContainer {
@@ -234,6 +227,38 @@
     display: block;
 }
 
+/* section BANNER OFFER */
+
+.baner__offer {
+    margin: 0 -28% 0 -28%;
+    clip-path: polygon(0 0, 50% 2rem, 100% 0, 100% calc(100% - 2rem), 50% 100%, 0 calc(100% - 2rem));
+}
+
+
+/* section BANNER TECHNOLOGY */
+
+.technology {
+    padding: 8rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.technology__figure {
+    flex: 1;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    clip-path: polygon(0 0, 50% 2rem, 100% 0, 100% calc(100% - 2rem), 50% 100%, 0 calc(100% - 2rem));
+}
+
+.technology__descContainer {
+    flex: 1;
+    padding: 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
 
 /* section REALIZATIONS */
 
@@ -243,7 +268,8 @@
     padding: 8rem 0;
     display: flex;
     flex-direction: column;
-    background: #2c231c;
+    background: rgb(26, 27, 19);
+    background: linear-gradient(90deg, rgba(26, 27, 19), rgba(47, 57, 35), rgba(26, 27, 19));
     position: relative;
     clip-path: polygon(0 0, 50% 2rem, 100% 0, 100% calc(100% - 2rem), 50% 100%, 0 calc(100% - 2rem));
 }
@@ -264,11 +290,6 @@
     padding-top: 2rem;
 }
 
-.realizations__figure {
-    width: 100%;
-    height: 100%;
-}
-
 .realizations__img {
     width: 100%;
     height: 100%;
@@ -286,7 +307,6 @@
     max-width: 1200px;
     margin: auto;
 }
-
 
 /* section CONTACT */
 
@@ -343,19 +363,23 @@
     }
 }
 
+/* section BANNER PHONE */
+
+.baner__phone {
+    margin: 0 -28% 0 -28%;
+    clip-path: polygon(0 0, 50% 2rem, 100% 0, 100% calc(100% - 2rem), 50% 100%, 0 calc(100% - 2rem));
+}
+
 /* section FOOTER */
 
 .footer {
     width: 100%;
     background: black;
+    padding-top: 2rem;
+    margin-top: -2rem;
 }
 
-.footer__whiteSpace {
-    transform: translateY(-1px);
-    padding-top: 2rem;
-    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 2rem), 50% 100%, 0 calc(100% - 2rem));
-    background: white;
-}
+
 
 /* media */
 
@@ -401,6 +425,20 @@
         margin: auto;
     }
 
+    .baner__offer {
+        margin: 0 0;
+    }
+
+    .technology {
+        max-width: 1200px;
+        margin: auto;
+        flex-direction: row;
+    }
+
+    .technology__figure {
+        clip-path: polygon(0 1rem, 100% 0, 100% calc(100% - 1rem), 0 100%);
+    }
+
     .realizations__imgsContainer {
         grid-template-columns: repeat(4, 1fr);
     }
@@ -408,6 +446,10 @@
     .contact {
         max-width: 1200px;
         margin: auto;
+    }
+
+    .baner__phone {
+        margin: 0 0;
     }
 
     .contact__tel {

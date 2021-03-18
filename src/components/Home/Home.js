@@ -2,12 +2,17 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import style from './Home.module.css'
 
-// images offer
+// images
 import logo from '../../assets/logo512.png'
 import start from '../../assets/start.jpg'
 import startSmall from '../../assets/startSmall.jpg'
 import about from '../../assets/about.jpg'
+import banerPompa from '../../assets/banerPompa.jpg'
+import banerWifi from '../../assets/banerWifi.jpg'
+import banerPhone from '../../assets/banerPhone.jpg'
 
+
+// images offer
 import kociol1 from '../../assets/offer/kociol1.png'
 import kociol2 from '../../assets/offer/kociol2.jpg'
 import kociol4 from '../../assets/offer/kociol4.jpg'
@@ -71,7 +76,6 @@ const Home = () => {
             <section className={style.why}>
                 <div className={style.why__container}>
                     <div className={style.why__descContainer}>
-                        <div className={style.why__blackFilter}></div>
                         <p className="text1">DLACZEGO MY</p>
                         <p className="text2 text2white">Zobacz co nas wyróżnia</p>
                         <div className="line"></div>
@@ -146,6 +150,26 @@ const Home = () => {
             </section>
 
 
+            <section className={style.baner__offer}>
+                <figure className="figure">
+                    <img className="img" src={banerPompa} alt="banerPompa" />
+                </figure>
+            </section>
+
+
+            <section className={style.technology}>
+                <div className={style.technology__descContainer}>
+                    <p className="text1">Technologia</p>
+                    <p className="text2">Nowoczesne instalacje.</p>
+                    <div className="line"></div>
+                    <h1 className="text3">Proponujemy naszym klientom najnowocześniejsze rowiązania dostępne na rynku.</h1>
+                </div>
+                <figure className={style.technology__figure}>
+                    <img className="img" src={banerWifi} alt="banerWifi" />
+                </figure>
+            </section>
+
+
             <section className={style.realizations}>
                 <div className={style.realizations__container}>
                     <div className={style.realizations__descContainer}>
@@ -154,16 +178,16 @@ const Home = () => {
                         <div className="line"></div>
                     </div>
                     <div className={style.realizations__imgsContainer}>
-                        <figure className={style.realizations__figure}>
+                        <figure className="figure">
                             <img className={style.realizations__img} src={cwu1} alt="cwu1" />
                         </figure>
-                        <figure className={style.realizations__figure}>
+                        <figure className="figure">
                             <img className={style.realizations__img} src={cwu4} alt="cwu4" />
                         </figure>
-                        <figure className={style.realizations__figure}>
+                        <figure className="figure">
                             <img className={style.realizations__img} src={co1} alt="co1" />
                         </figure>
-                        <figure className={style.realizations__figure}>
+                        <figure className="figure">
                             <img className={style.realizations__img} src={co2} alt="co2" />
                         </figure>
                     </div>
@@ -175,6 +199,7 @@ const Home = () => {
                 </div>
             </section>
 
+
             <section className={style.contact}>
                 <p className="text1">KONTAKT</p>
                 <p className="text2">Zamów bezpłatną wycenę</p>
@@ -185,7 +210,13 @@ const Home = () => {
                 </div>
             </section>
 
-            <section className={style.footer}><div className={style.footer__whiteSpace}></div></section>
+            <section className={style.baner__phone}>
+                <figure className="figure">
+                    <img className="img" src={banerPhone} alt="banerPhone" />
+                </figure>
+            </section>
+
+            <section className={style.footer}> </section>
 
         </div>
     )

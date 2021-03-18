@@ -2,22 +2,26 @@ import React from 'react'
 import style from './Offer.module.css'
 
 // photos
+import banerPompaCiepla from '../../assets/offer/banerPompaCiepla.jpg'
+import montazKotlow from '../../assets/offer/montazKotlow.jpeg'
+import banerNowoczesne from '../../assets/offer/banerNowoczesne.jpg'
+import serwis from '../../assets/offer/serwis.jpg'
+import wodkan from '../../assets/offer/wodkan.jpg'
+import gaz from '../../assets/offer/gaz.jpg'
 import solar from '../../assets/offer/solar.jpg'
-
-
-
+import uszczelnianie from '../../assets/offer/uszczelnianie.jpg'
 
 
 
 const offer = [
-    { img: solar, text: "Pompy ciepła.", number: ".01" },
-    { img: solar, text: "Montaż kotłów gazowych.", number: ".02" },
-    { img: solar, text: "Serwis kotłów gazowych Ariston i Chaffoteaux&Maury", number: ".03" },
-    { img: solar, text: "Nowoczesne instalacje centralnego ogrzewania.", number: ".04" },
-    { img: solar, text: "Instalacje wodociągowe i kanalizacyjne.", number: ".05" },
-    { img: solar, text: "Instalacje gazowe.", number: ".06" },
+    { img: banerPompaCiepla, text: "Pompy ciepła.", number: ".01" },
+    { img: montazKotlow, text: "Montaż kotłów gazowych.", number: ".02" },
+    { img: banerNowoczesne, text: "Nowoczesne instalacje centralnego ogrzewania.", number: ".03" },
+    { img: serwis, text: "Serwis kotłów gazowych Ariston i Chaffoteaux&Maury", number: ".04" },
+    { img: wodkan, text: "Instalacje wodociągowe i kanalizacyjne.", number: ".05" },
+    { img: gaz, text: "Instalacje gazowe.", number: ".06" },
     { img: solar, text: "Instalacje solarne.", number: ".07" },
-    { img: solar, text: "Bezinwayjne uszczelnianie instalacji co.", number: ".08" },
+    { img: uszczelnianie, text: "Bezinwayjne uszczelnianie instalacji co.", number: ".08" },
 ]
 
 
@@ -39,14 +43,14 @@ const Offer = () => {
                     {offer.map((item, id) => {
                         return (
                             <div key={item.text} style={id % 2 === 0 ? { alignItems: "flex-start" } : { alignItems: "flex-end" }} className={style.offer__item}>
+                                <figure style={id % 2 === 0 ? { padding: "0 0 0 4rem" } : { padding: "0 4rem 0 0" }} className={style.offer__itemFigure}>
+                                    <img className={style.offer__itemImg} src={item.img} alt={`${item.img}`} />
+                                </figure>
                                 <div className={style.offer__itemTextContainer}>
                                     <p className={style.offer__itemNumber}>{item.number}</p>
                                     <h1 className={style.offer__itemText}>{item.text}</h1>
                                     <div className="line"></div>
                                 </div>
-                                <figure style={id % 2 === 0 ? { padding: "0 0 0 4rem" } : { padding: "0 4rem 0 0" }} className={style.offer__itemFigure}>
-                                    <img className={style.offer__itemImg} src={item.img} alt={`${item.img}`} />
-                                </figure>
                             </div>
                         )
                     })}
