@@ -1,6 +1,12 @@
-import React, { useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import style from './Home.module.css'
+
+// aos
+import AOS from 'aos'
+
+// components
+import Spinner from '../../UI/Spinner/Spinner'
 
 // images
 import logo from '../../assets/logo512.png'
@@ -10,7 +16,6 @@ import about from '../../assets/about.jpg'
 import banerPompa from '../../assets/banerPompa.jpg'
 import banerWifi from '../../assets/banerWifi.jpg'
 import banerPhone from '../../assets/banerPhone.jpg'
-
 
 // images offer
 import kociol1 from '../../assets/offer/kociol1.png'
@@ -39,25 +44,32 @@ const Home = () => {
 
     useEffect(() => { window.scrollTo(0, 0) }, [])
 
+    // AOS reload after load first photo to not show animation elements before load screen
+    const [isLoadStart, setIsLoadStart] = useState(false)
+    useEffect(() => { AOS.refresh() }, [isLoadStart])
+
     return (
 
         <main className={style.background}>
 
 
             <section className={style.start}>
+                {!isLoadStart && <Spinner />}
                 <figure className={style.start__figureSmall}>
-                    <img className="img" src={startSmall} alt="startSmall" />
+                    <img className={style.start__imgSmall} src={startSmall} alt="startSmall" />
                 </figure>
-                <figure className={style.start__figure}>
-                    <img className="img" src={start} alt="start" />
-                </figure>
+                <div className={style.start__figureMaxWidth}>
+                    <figure className={style.start__figure}>
+                        <img onLoad={() => setIsLoadStart(true)} className={style.start__img} src={start} alt="start" />
+                    </figure>
+                </div>
                 <div className={style.start__blackFilter}></div>
                 <div className={style.start__descContainer}>
                     <div className={style.start__text1Container}>
                         <img className={style.start__imgLogo} src={logo} alt="logo" />
                         <p className={style.start__text1}>Nasze instalacje</p>
                     </div>
-                    <p className={style.start__text2}>Twój KOMFORT</p>
+                    {isLoadStart && <div><p className={style.start__text2}>Twój KOMFORT</p></div>}
                 </div>
             </section>
 
@@ -65,7 +77,7 @@ const Home = () => {
 
             <section className={style.about}>
                 <figure className={style.about__figure}>
-                    <img className="img" src={about} alt="about" />
+                    <img data-aos="fade-right" className="img" src={about} alt="about" />
                 </figure>
                 <div className={style.about__descContainer}>
                     <p className="text1">O NAS</p>
@@ -78,7 +90,7 @@ const Home = () => {
 
             <section className={style.why}>
                 <div className={style.why__container}>
-                    <div className={style.why__descContainer}>
+                    <div data-aos="flip-left" className={style.why__descContainer}>
                         <p className="text1">DLACZEGO MY</p>
                         <p className="text2 text2white">Zobacz co nas wyróżnia</p>
                         <div className="line"></div>
@@ -105,19 +117,19 @@ const Home = () => {
 
                     <div className={style.offer__containerImgsTop}>
                         <figure className={style.offer__figure}>
-                            <img className={style.offer__img} src={kociol1} alt="kociol1" />
+                            <img data-aos="zoom-in" className={style.offer__img} src={kociol1} alt="kociol1" />
                         </figure>
                         <figure className={style.offer__figure}>
-                            <img className={style.offer__img} src={pompa3} alt="pompa3" />
+                            <img data-aos="zoom-in" className={style.offer__img} src={pompa3} alt="pompa3" />
                         </figure>
                         <figure className={style.offer__figure}>
-                            <img className={style.offer__img} src={PompCWO1} alt="PompCWO1" />
+                            <img data-aos="zoom-in" className={style.offer__img} src={PompCWO1} alt="PompCWO1" />
                         </figure>
                         <figure className={style.offer__figure}>
-                            <img className={style.offer__img} src={pompa2} alt="pompa2" />
+                            <img data-aos="zoom-in" className={style.offer__img} src={pompa2} alt="pompa2" />
                         </figure>
                         <figure className={style.offer__figure}>
-                            <img className={style.offer__img} src={kociol4} alt="kociol4" />
+                            <img data-aos="zoom-in" className={style.offer__img} src={kociol4} alt="kociol4" />
                         </figure>
                     </div>
 
@@ -130,19 +142,19 @@ const Home = () => {
 
                     <div className={style.offer__containerImgsBottom}>
                         <figure className={style.offer__figure}>
-                            <img className={style.offer__img} src={pakiet1} alt="pakiet1" />
+                            <img data-aos="zoom-in" className={style.offer__img} src={pakiet1} alt="pakiet1" />
                         </figure>
                         <figure className={style.offer__figure}>
-                            <img className={style.offer__img} src={kociol2} alt="kociol2" />
+                            <img data-aos="zoom-in" className={style.offer__img} src={kociol2} alt="kociol2" />
                         </figure>
                         <figure className={style.offer__figure}>
-                            <img className={style.offer__img} src={PompCWO2} alt="PompCWO2" />
+                            <img data-aos="zoom-in" className={style.offer__img} src={PompCWO2} alt="PompCWO2" />
                         </figure>
                         <figure className={style.offer__figure}>
-                            <img className={style.offer__img} src={pakiet2} alt="pakiet2" />
+                            <img data-aos="zoom-in" className={style.offer__img} src={pakiet2} alt="pakiet2" />
                         </figure>
                         <figure className={style.offer__figure}>
-                            <img className={style.offer__img} src={pompa1} alt="pompa1" />
+                            <img data-aos="zoom-in" className={style.offer__img} src={pompa1} alt="pompa1" />
                         </figure>
 
                     </div>
@@ -168,7 +180,7 @@ const Home = () => {
                     <h2 className="text3">Proponujemy naszym klientom najnowocześniejsze rowiązania dostępne na rynku.</h2>
                 </div>
                 <figure className={style.technology__figure}>
-                    <img className="img" src={banerWifi} alt="banerWifi" />
+                    <img data-aos="fade-left" className="img" src={banerWifi} alt="banerWifi" />
                 </figure>
             </section>
 
@@ -182,16 +194,16 @@ const Home = () => {
                     </div>
                     <div className={style.realizations__imgsContainer}>
                         <figure className="figure">
-                            <img className={style.realizations__img} src={cwu1} alt="cwu1" />
+                            <img data-aos="zoom-in" className={style.realizations__img} src={cwu1} alt="cwu1" />
                         </figure>
                         <figure className="figure">
-                            <img className={style.realizations__img} src={cwu4} alt="cwu4" />
+                            <img data-aos="zoom-in" className={style.realizations__img} src={cwu4} alt="cwu4" />
                         </figure>
                         <figure className="figure">
-                            <img className={style.realizations__img} src={co1} alt="co1" />
+                            <img data-aos="zoom-in" className={style.realizations__img} src={co1} alt="co1" />
                         </figure>
                         <figure className="figure">
-                            <img className={style.realizations__img} src={co2} alt="co2" />
+                            <img data-aos="zoom-in" className={style.realizations__img} src={co2} alt="co2" />
                         </figure>
                     </div>
                     <div className={style.realizations__btnContainer}>

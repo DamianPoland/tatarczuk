@@ -1,5 +1,8 @@
-import React, { useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import style from './Offer.module.css'
+
+// aos
+import AOS from 'aos'
 
 // components
 import Carousel from '../../UI/Carousel/Carousel'
@@ -32,9 +35,13 @@ const Offer = () => {
 
     useEffect(() => { window.scrollTo(0, 0) }, [])
 
+    // AOS reload after load first photo to not show animation elements before load screen
+    const [isLoadStart, setIsLoadStart] = useState(false)
+    useEffect(() => { AOS.refresh() }, [isLoadStart])
+
     return (
 
-        <main className={style.background}>
+        <main onLoad={() => setIsLoadStart(true)} className={style.background}>
             <div className={style.section}>
 
                 <header className={style.head}>
@@ -53,7 +60,7 @@ const Offer = () => {
                     {offer.map((item, id) => {
                         return (
                             <div key={item.text} style={id % 2 === 0 ? { alignItems: "flex-start" } : { alignItems: "flex-end" }} className={style.offer__item}>
-                                <figure style={id % 2 === 0 ? { padding: "0 0 0 4rem" } : { padding: "0 4rem 0 0" }} className={style.offer__itemFigure}>
+                                <figure data-aos="zoom-in" style={id % 2 === 0 ? { padding: "0 0 0 4rem" } : { padding: "0 4rem 0 0" }} className={style.offer__itemFigure}>
                                     <img className={style.offer__itemImg} src={item.img} alt={`${item.img}`} />
                                 </figure>
                                 <div className={style.offer__itemTextContainer}>

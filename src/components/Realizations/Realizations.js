@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import style from './Realizations.module.css'
 
+// aos
+import AOS from 'aos'
+
 // components
 import TouchSlider from "../../UI/TouchSlider/TouchSlider"
 
@@ -74,17 +77,19 @@ const Realizations = () => {
     // swiper
     const [isSwiperVisible, setIsSwiperVisible] = useState(false)
 
+    // AOS reload after load first photo to not show animation elements before load screen
+    const [isLoadStart, setIsLoadStart] = useState(false)
+    useEffect(() => { AOS.refresh() }, [isLoadStart])
+
     return (
 
         <div className={style.background}>
             {isSwiperVisible &&
                 <section className={style.slider__background}>
-                    <div className={style.slider}>
-                        <div onClick={() => setIsSwiperVisible(false)} className={style.slider__close}>
-                            <Close />
-                        </div>
-                        <TouchSlider itemsArray={realizations} initialSlide={isSwiperVisible - 1} />
+                    <div onClick={() => setIsSwiperVisible(false)} className={style.slider__close}>
+                        <Close />
                     </div>
+                    <TouchSlider itemsArray={realizations} initialSlide={isSwiperVisible - 1} />
                 </section>}
 
             <main className={style.section}>
@@ -99,7 +104,7 @@ const Realizations = () => {
                     {realizations.map((item, id) => {
                         return (
                             <figure onClick={() => setIsSwiperVisible(id + 1)} key={id} className={style.realizations__itemFigure}>
-                                <img className={style.realizations__itemImg} src={item.img} alt={`${item.img}`} />
+                                <img onLoad={() => realizations.length === (id + 1) && setIsLoadStart(true)} data-aos="zoom-in" className={style.realizations__itemImg} src={item.img} alt={`${item.img}`} />
                             </figure>
                         )
                     })}

@@ -20,3 +20,18 @@
     background: white;
     padding: 0.5rem;
 }
+
+.slider__wrapperMy {
+    height: 100%;
+    max-width: 60vh;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (min-width: 800px) {
+    .slider__wrapperMy {
+        max-width: 180vh;
+    }
+}

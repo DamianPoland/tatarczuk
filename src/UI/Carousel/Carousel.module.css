@@ -1,5 +1,5 @@
 .boxContainer {
-    padding: 1rem 0;
+    padding: 1rem 0 2rem 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -32,6 +32,9 @@
     height: 100%;
     transform-origin: center;
     transform-style: preserve-3d;
+
+    /* shadow => not support firefox, rest OK */
+    -webkit-box-reflect: below 10px linear-gradient(transparent 60%, rgba(0, 0, 0, 0.1) 100%);
 }
 
 .box span img {
@@ -45,6 +48,6 @@
 
 @media (min-width: 800px) {
     .boxContainer {
-        padding: 3rem 0;
+        padding: 3rem 0 5rem 0;
     }
 }
