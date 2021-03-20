@@ -90,15 +90,16 @@
 
 .contentItem:active {
     background-color: rgba(var(--accent), 0.4);
+    display: flex;
 }
 
 .contentIcon {
-    width: 3rem;
-    height: 3rem;
-    border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
     fill: rgb(var(--accent));
 }
 

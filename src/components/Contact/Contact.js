@@ -42,9 +42,9 @@ const Contact = () => {
                             <p className={style.contentIcon}><Phone /></p>
                             <p className={style.contentDesc}>tel: +48 501-388-627</p>
                         </a>
-                        <a className={style.contentItem} href='mailto:tatarczuk.serwis@poczta.fm?subject=Zapytanie'>
+                        <a className={style.contentItem} href='mailto:biuro@tatarczuk.com.pl?subject=Zapytanie'>
                             <p className={style.contentIcon}><Email /></p>
-                            <p className={style.contentDesc}>e-mail: tatarczuk.serwis@poczta.fm</p>
+                            <p className={style.contentDesc}>e-mail: biuro@tatarczuk.com.pl</p>
                         </a>
                     </section>
 

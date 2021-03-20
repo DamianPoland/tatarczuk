@@ -128,22 +128,31 @@
     font-family: 'Kalam', cursive;
 }
 
+.start__text2Container {
+    display: flex;
+    align-items: center;
+}
+
+
 .start__text2 {
-    width: 100%;
-    font-size: 1.5em;
     color: white;
     font-weight: 600;
+    font-size: 1.5em;
+    width: 100%;
     padding-top: 1rem;
     letter-spacing: 2px;
 
     /* text animation */
     overflow: hidden;
-    border-right: .15em solid rgb(var(--accent));
     white-space: nowrap;
     margin: 0 auto;
-    animation:
-        typing 1.5s steps(20, end),
-        blink-caret .75s step-end infinite;
+    animation: typing 1.5s steps(20, end);
+}
+
+@supports (-webkit-overflow-scrolling: touch) {
+    .start__text2 {
+        color: red;
+    }
 }
 
 /* The typing effect */
@@ -154,19 +163,6 @@
 
     100% {
         width: 100%
-    }
-}
-
-/* The typewriter cursor effect */
-@keyframes blink-caret {
-
-    0%,
-    100% {
-        border-color: transparent
-    }
-
-    50% {
-        border-color: rgb(var(--accent));
     }
 }
 

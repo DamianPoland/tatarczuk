@@ -69,7 +69,10 @@ const Home = () => {
                         <img className={style.start__imgLogo} src={logo} alt="logo" />
                         <p className={style.start__text1}>Nasze instalacje</p>
                     </div>
-                    {isLoadStart && <div><p className={style.start__text2}>Twój KOMFORT</p></div>}
+                    {isLoadStart &&
+                        <div className={style.start__text2Container}>
+                            <p className={style.start__text2}>Twój KOMFORT</p>
+                        </div>}
                 </div>
             </section>
 
@@ -219,7 +222,12 @@ const Home = () => {
                 <p className="text1">KONTAKT</p>
                 <h2 className="text2">Zamów bezpłatną wycenę</h2>
                 <div className="line"></div>
-                <h1 className={style.contact__tel}><a href='tel:+48501388627' className={style.contact__telIcon}><Phone /></a>+48 501-388-627</h1>
+                <h1 className={style.contact__tel}>
+                    <a href='tel:+48501388627' className={style.contact__telIcon}>
+                        <Phone />
+                    </a>
+                        +48 501-388-627
+                        </h1>
                 <div className={style.btnContainer}>
                     <Link to="/contact" className={style.btn}>Sprawdź inne formy kontaktu <i className={style.rightArrow}></i></Link>
                 </div>
