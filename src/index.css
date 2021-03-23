@@ -49,15 +49,6 @@ body::-webkit-scrollbar-thumb {
   border-radius: 999px;
 }
 
-
-@media screen and (max-width: 500px) {
-
-  html,
-  body {
-    font-size: 75%;
-  }
-}
-
 /* all COMPONENTS */
 
 .text1 {

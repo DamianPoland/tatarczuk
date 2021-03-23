@@ -75,14 +75,14 @@
 }
 
 .offer__itemNumber {
-    font-size: 3rem;
+    font-size: 2.5rem;
     color: rgb(var(--accent));
     font-weight: 300;
     font-family: 'Kalam', cursive;
 }
 
 .offer__itemText {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     color: black;
     font-weight: 600;
     text-align: center;

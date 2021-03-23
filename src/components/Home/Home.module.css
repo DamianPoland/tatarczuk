@@ -137,7 +137,7 @@
 .start__text2 {
     color: white;
     font-weight: 600;
-    font-size: 1.5em;
+    font-size: 1.4em;
     width: 100%;
     padding-top: 1rem;
     letter-spacing: 2px;
@@ -277,6 +277,7 @@
 
 .offer__figure {
     height: 10rem;
+    width: auto;
     transition: 0.3s ease-in-out;
 }
 
@@ -378,7 +379,7 @@
 .contact__tel {
     display: flex;
     align-items: center;
-    font-size: 3rem;
+    font-size: 2rem;
     color: black;
     font-weight: 300;
     padding-top: 2rem;
